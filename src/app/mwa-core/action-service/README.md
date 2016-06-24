@@ -25,7 +25,7 @@ As Demo have a 'subCategory' called 'DEMO_MENU', other actions may be added to t
           'label': 'Demo',
           'priority': 20,
           'url':'/demo'
-
+		  
 		  },  {
           'name': 'CONTACT',
           'category': 'MAIN_MENU',
