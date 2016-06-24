@@ -17,6 +17,7 @@ An module may overrides another module's action through the ActionServiceProvide
 Adds a 'Demo' and a 'Contact' item in the main menu (MAIN_MENU).
 As 'Contact' priority is greater the 'Demo', it will be placed after 'Demo'.
 As Demo have a 'subCategory' called 'DEMO_MENU', other actions may be added to the 'DEMO_MENU' category to be added to the second level of the menu.
+
     ActionServiceProvider
         .addActions([{
           'name': 'DEMO',          
@@ -25,8 +26,7 @@ As Demo have a 'subCategory' called 'DEMO_MENU', other actions may be added to t
           'label': 'Demo',
           'priority': 20,
           'url':'/demo'
-
-		  },  {
+		  }, {
           'name': 'CONTACT',
           'category': 'MAIN_MENU',
           'label': 'Contact',
