@@ -1,0 +1,19 @@
+<div class="container">
+
+  <div>
+    <x-navbar />
+  </div>
+
+  <div class="jumbotron">
+    <h1>{{demo.title}}</h1>
+    <div class="list-group">
+        <a href="#" class="list-group-item"
+           ng-repeat="action in demo.actions">
+           <h4 class="list-group-item-heading">{{ action.label }}</h4>
+           <p class="list-group-item-text">{{ action.description }}</p>
+        </a>
+    </div>
+  </div>
+
+
+</div>
