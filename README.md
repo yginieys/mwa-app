@@ -13,7 +13,9 @@ This project is generated with generator-gulp-angular (https://github.com/Swiip/
 
 ## Build & development
 
-Run `gulp` for building and `gulp serve` for preview.
+* npm install
+* bower install
+* Run `gulp` for building and `gulp serve` for preview.
 
 ## Testing
 
