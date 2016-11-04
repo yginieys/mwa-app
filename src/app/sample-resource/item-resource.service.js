@@ -7,7 +7,7 @@
   
   /** @ngInject */
   function ItemService($resource) {
-    var itemListResource = $resource('http://js.medialib.loc:3500/test/items/:id', 
+    var itemListResource = $resource('http://192.168.50.31/test/items/:id', 
       { id: '@id'}, 
       { 
         'get':    {

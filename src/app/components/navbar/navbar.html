@@ -9,8 +9,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">
-        <span class="glyphicon glyphicon-home"></span> Modular WebApp
+      <a class="navbar-brand" href="#" ng-if="online">
+        <span class="glyphicon glyphicon-home"></span> ONLINE
+      </a>
+      <a class="navbar-brand bg-danger" href="#" ng-if="!online">
+        <span class="glyphicon glyphicon-home"></span> OFFLINE
       </a>
     </div>
 
@@ -43,7 +46,7 @@
                 <li ng-repeat="action in vm.subActions(action)"
                     ><a href="" ng-click="vm.exec(action)">{{ vm.label(action) }}</a></li>
             </ul>
-        </li>
+        </li>        
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container-fluid -->

@@ -6,9 +6,10 @@
     .controller('CachedResourceSampleController', CachedResourceSampleController);
 
   /** @ngInject */
-  function CachedResourceSampleController(ItemService, $log) {
+  function CachedResourceSampleController(CachedItemService, $log) {
     var vm = this,
       emptyItem = { 'name': null };
+    var ItemService = CachedItemService;
     
     /**
      * Item selected for edition.
@@ -47,7 +48,7 @@
     
     vm.delete = function() {
       $log.debug('delete()', vm.selectedItem);
-      vm.selectedItem.$delete().then(function() {
+      vm.selectedItem.$delete().$promise.then(function() {
         $log.debug(' >>> deleted sucessfull');
         vm.reset();
         vm.itemList = ItemService.get();

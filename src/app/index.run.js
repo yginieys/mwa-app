@@ -1,14 +1,25 @@
-(function() {
+(function () {
   'use strict';
 
   angular
     .module('app')
-    .run(runBlock);
+    .run(onlineFlag);
 
   /** @ngInject */
-  function runBlock($log) {
+  function onlineFlag($window, $rootScope) {
 
-    $log.debug('runBlock end');
+    $rootScope.online = navigator.onLine;
+    $window.addEventListener("offline", function () {
+      $rootScope.$apply(function () {
+        $rootScope.online = false;
+      });
+    }, false);
+
+    $window.addEventListener("online", function () {
+      $rootScope.$apply(function () {
+        $rootScope.online = true;
+      });
+    }, false);
   }
 
 })();
