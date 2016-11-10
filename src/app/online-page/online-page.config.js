@@ -5,22 +5,20 @@
     .module('app')
     .config(config);
 
+  var goToOnline = function(action) {
+    location.pathname = "/online-only.html";
+  };
+    
   /** @ngInject */
-  function config($logProvider, ActionServiceProvider) {
+  function config($logProvider, ActionServiceProvider) {    
+    
     ActionServiceProvider
       .addActions([{
-          'name': 'RESOURCE_MENU',
+          'name': 'ONLINE_MENU',
           'category': 'MAIN_MENU',
-          'subCategory': 'RESOURCE_MENU',
-          'label': 'Sample Resources',
-          'priority': 20
-        }])
-      .addActions([{
-          'name': 'SIMPLE_RESOURCE_SAMPLE',
-          'category': 'RESOURCE_MENU',
-          'label': 'Sample Resource',
-          'priority': 10,
-          'url': '/sample-resource'
+          'label': 'Online page',
+          'priority': 30,
+          'action': goToOnline
         }]);
   }
 

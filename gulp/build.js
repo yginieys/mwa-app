@@ -102,8 +102,9 @@ gulp.task('manifest', function(){
       hash: true,
       preferOnline: true,
       network: ['*'],
+      fallback: ['/ /offline-fallback.html'],
       filename: 'app.manifest',
-      exclude: 'app.manifest'
+      exclude: ['app.manifest', 'online-only.html']
      }))
     .pipe(gulp.dest('dist-manifest'));
 });
