@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "dependencies": {},
   "scripts": {
-    "test": "gulp test"
+    "test": "echo \"Hello World\"; gulp test",
+    "manifest": "gulp clean; gulp dist-manifest; gulp manifest"
   },
   "devDependencies": {
     "browser-sync": "~2.9.11",

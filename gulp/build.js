@@ -97,7 +97,7 @@ gulp.task('clean', function () {
 });
 
 gulp.task('manifest', function(){
-  gulp.src(['dist/**'], { base: './dist/' })
+  gulp.src(['dist-manifest/**'], { base: './dist-manifest' })
     .pipe(manifest({
       hash: true,
       preferOnline: true,
@@ -105,7 +105,13 @@ gulp.task('manifest', function(){
       filename: 'app.manifest',
       exclude: 'app.manifest'
      }))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist-manifest'));
+});
+
+gulp.task('dist-manifest', ['build'], function () {
+  $.del.sync(['dist-manifest/**/*', '!dist-manifest/app.manifest']);
+  gulp.src(['dist/**/*'], {base:'./dist'})
+    .pipe(gulp.dest('dist-manifest'));
 });
 
 gulp.task('build', ['html', 'fonts', 'other']);

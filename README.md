@@ -2,6 +2,8 @@
 
 App to test various aspect of offline constraint.
 
+_npm run manifest_ : build dist-manifest directory with offline version of the app.
+
 1. Offline detection and indicator : see index.run.js function onlineFlag()
 2. $resource offline management : See cached-resource/item-resource.service.js and https://github.com/goodeggs/angular-cached-resource
    => If online, then store resource response to local cache and use them when offline. Store PUT and POST if offline to replay then when offline again.
@@ -16,6 +18,7 @@ Tested with /test/items. Work as intended for reading. BUT doesn't work for writ
 
 Still todo :
 
+* Test fallback page.
 * Use manifest to preload html fragment from external source.
 * Handle auto-update. See https://www.theodo.fr/blog/2015/04/how-to-automatically-update-your-angular-offline-webapps/ 
 * See possibility to display $cacheResource modified locally for each resource.

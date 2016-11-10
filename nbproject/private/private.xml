@@ -3,9 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Z:/www/resource-demo/clientjs/src/app/sample-resource/item-resource.service.js</file>
-            <file>file:/Z:/www/resource-demo/clientjs/src/app/cached-resource/item-resource.service.js</file>
-            <file>file:/Z:/www/resource-demo/clientjs/src/app/index.run.js</file>
+            <file>file:/Z:/www/resource-demo/clientjs/src/app/components/refresh-app/refresh-app.html</file>
+            <file>file:/Z:/www/resource-demo/clientjs/src/app/components/refresh-app/refresh-app.directive.js</file>
+            <file>file:/Z:/www/resource-demo/clientjs/src/app/main/main.html</file>
         </group>
     </open-files>
 </project-private>
