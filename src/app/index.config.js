@@ -5,6 +5,15 @@
     .module('app')
     .config(config);
 
+// The angular-drupal configuration settings for my simple app.
+angular.module('angular-drupal').config(function($provide) {
+
+  $provide.value('drupalSettings', {
+    sitePath: 'http://drupal8.loc:3000'
+  });
+
+});
+
   /** @ngInject */
   function config($logProvider, ActionServiceProvider) {
     ActionServiceProvider

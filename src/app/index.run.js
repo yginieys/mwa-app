@@ -6,8 +6,10 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log) {
-
+  function runBlock($log, drupal) {
+    /*drupal.nodeLoad(11).then(function(node) {
+      alert(node.label());
+    });*/
     $log.debug('runBlock end');
   }
 

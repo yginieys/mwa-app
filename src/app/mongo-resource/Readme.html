@@ -1,0 +1,59 @@
+=============================
+==== number =================
+=============================
+<div class="form-group">
+        <label for="age">age</label>
+        <input type="number" min="0" step="1" class="form-control" id="age" 
+               ng-model="main.selectedItem.age"/>        
+      </div>      
+
+=============================
+==== Date =================
+=============================
+
+<!-- Démonstrate date transfer issue in JSON-->
+      <div class="form-group">
+        <label for="birthdate">birthdate</label>
+        <input type="date" class="form-control" id="birthdate" 
+               ng-model="main.selectedItem.birthdate"/>        
+      </div>
+
+=============================
+==== Array of string ========
+=============================
+
+Dans le controller
+    vm.fruits = ['apple', 'orange', 'pear', 'naartjie'];
+    
+    // toggle selection for a given fruit by name
+    vm.toggleSelection = function toggleSelection(fruitName) {
+      if(!vm.selectedItem.selection) {
+        vm.selectedItem.selection = [];
+      }
+      var idx = vm.selectedItem.selection.indexOf(fruitName);
+
+      // is currently selected
+      if (idx > -1) {
+        vm.selectedItem.selection.splice(idx, 1);
+      }
+
+      // is newly selected
+      else {
+        vm.selectedItem.selection.push(fruitName);
+      }
+    };
+
+
+Dans la vue:
+<div class="form-group">
+        <label ng-repeat="fruitName in main.fruits">
+          <input
+            type="checkbox"
+            class="form-control"
+            name="selectedFruits[]"
+            value="{{fruitName}}"
+            ng-checked="main.selectedItem.selection.indexOf(fruitName) > -1"
+            ng-click="main.toggleSelection(fruitName)"
+            > {{fruitName}}
+        </label>
+      </div>         

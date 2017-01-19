@@ -1,0 +1,58 @@
+<div class="container">
+
+  <div>
+    <x-navbar />
+  </div>
+
+  <h3>mongo $resource exposed via drupal webservice</h3>
+  <div class="jumbotron text-center">    
+    <form class="form-inline">
+      <div class="form-group">
+        <label for="first_name">first_name</label>
+        <input type="text" class="form-control" id="first_name" 
+               ng-model="main.selectedItem.first_name"/>
+      </div>
+      <div class="form-group">
+        <label for="name">last_name</label>
+        <input type="text" class="form-control" id="last_name" 
+               ng-model="main.selectedItem.last_name"/>        
+      </div>      
+        <!-- Démonstrate date transfer issue in JSON-->
+      <div class="form-group">
+        <label for="birthdate">birthdate</label>
+        <input type="date" class="form-control" id="birthdate" 
+               ng-model="main.selectedItem.birthdate"/>        
+      </div>
+      <button type="submit" class="btn btn-default"
+              ng-click="main.update()"
+              ng-if="main.isUpdate()">Update</button>
+      <button type="submit" class="btn btn-default"
+              ng-click="main.save()"
+              ng-if="!main.isUpdate()">Save</button>
+      <button type="submit" class="btn btn-default"
+              ng-click="main.delete()"
+              ng-disabled="!main.isUpdate()">Delete</button>
+      <button type="submit" class="btn btn-default"
+              ng-click="main.reset()">Reset</button>
+    </form>
+  </div>
+
+  <div>
+    <table class="table table-striped">
+      <tr><th>ID</th><th>first_name</th><th>last_name</th></tr>
+      <tr ng-repeat="item in main.itemList"
+          ng-click="main.selectItem(item)">
+        <td>{{item._id.$id}}</td>
+        <td>{{item.first_name}}</td>
+        <td>{{item.last_name}}</td>
+      </tr>
+    </table>
+  </div>
+  
+  <div>
+    <h3>DEBUG</h3>
+    main.selectedItem
+    <pre>{{main.selectedItem | json}}</pre>
+  </div>
+
+</div>
